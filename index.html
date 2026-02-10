@@ -122,16 +122,16 @@
   <section class="section-blue relative">
     <canvas id="pipe-canvas-desktop" class="hidden md:mt-28 md:block absolute inset-0 w-full h-full"></canvas>
     
-    <div class="max-w-7xl mx-auto md:px-6 pb-10 md:py-20 relative z-10">
+    <div class="max-w-7xl mx-auto md:py-20 relative z-10">
       <div class="w-full md:hidden">
         <canvas id="pipe-canvas-mobile"></canvas>
       </div>
       
       <div class="flex flex-col md:flex-row items-center md:min-h-[500px]">
-        <div class="w-full md:w-1/2 mb-8 md:mb-0 px-6 md:px-0 md:bg-white/20">
-            <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6 text-blue-900">
+        <div class="flex flex-col items-start w-full md:w-1/2 p-8 bg-white/80 rounded-2xl">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-blue-900">
               World-Class <br />
-              Concrete Manufacturing
+              <span class="text-4xl">Concrete Manufacturing</span>
             </h1>
             <p class="text-lg text-gray-700 mb-8 max-w-xl">
               High-quality RCC pipes, interlocking tiles, compound wall panels, and precision concrete products — engineered for durability.
@@ -153,46 +153,62 @@
     </div>
   </section>
 
-  <!-- Quality & Portfolio Section -->
+  <!-- Product Portfolio Section -->
   <section class="max-w-7xl mx-auto px-6 py-20">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-      <!-- Quality-Driven Manufacturing -->
-      <div class="bg-white border-2 border-blue-200 rounded-xl p-8 shadow-xl h-full">
-        <h2 class="text-sm font-bold text-blue-900 uppercase tracking-wide mb-6">
-          Quality-Driven Manufacturing
-        </h2>
-        <p class="text-gray-700 leading-relaxed">
-          We strive to achieve the highest standards in concrete manufacturing by
-          adopting modern, world-class production techniques, stringent quality
-          control processes, and precision moulding practices. Our focus is on
-          long-term durability, structural integrity, and consistent output across
-          all product lines.
+    <h2 class="text-3xl font-bold mb-10 text-blue-900">
+      Product Portfolio
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- RCC Pipes -->
+      <div class="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <div class="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mb-4">
+          <span class="text-2xl text-blue-600 font-bold">🔵</span>
+        </div>
+        <h3 class="text-lg font-semibold text-blue-900 mb-2">
+          RCC Pipes
+        </h3>
+        <p class="text-sm text-gray-600">
+          NP3 / NP4 and custom specifications
         </p>
       </div>
 
-      <!-- Product Portfolio -->
-      <div class="bg-white border-2 border-blue-200 rounded-xl p-8 shadow-xl h-full">
-        <h2 class="text-sm font-bold text-blue-900 uppercase tracking-wide mb-6">
-          Product Portfolio
-        </h2>
-        <ul class="space-y-4 text-gray-700">
-          <li class="flex items-start gap-3">
-            <span class="text-blue-600 font-bold">•</span>
-            <span>RCC Pipes (NP3 / NP4 and custom specifications)</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-blue-600 font-bold">•</span>
-            <span>Interlocking Concrete Tiles</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-blue-600 font-bold">•</span>
-            <span>Compound Wall Panels & Posts</span>
-          </li>
-          <li class="flex items-start gap-3">
-            <span class="text-blue-600 font-bold">•</span>
-            <span>Custom Concrete Moulded Products</span>
-          </li>
-        </ul>
+      <!-- Interlocking Tiles -->
+      <div class="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <div class="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mb-4">
+          <span class="text-2xl text-blue-600 font-bold">🔷</span>
+        </div>
+        <h3 class="text-lg font-semibold text-blue-900 mb-2">
+          Interlocking Tiles
+        </h3>
+        <p class="text-sm text-gray-600">
+          Durable concrete tiles for various applications
+        </p>
+      </div>
+
+      <!-- Compound Wall Panels -->
+      <div class="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <div class="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mb-4">
+          <span class="text-2xl text-blue-600 font-bold">🔲</span>
+        </div>
+        <h3 class="text-lg font-semibold text-blue-900 mb-2">
+          Compound Wall Panels
+        </h3>
+        <p class="text-sm text-gray-600">
+          Panels & posts for boundary walls
+        </p>
+      </div>
+
+      <!-- Custom Products -->
+      <div class="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <div class="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mb-4">
+          <span class="text-2xl text-blue-600 font-bold">⚙️</span>
+        </div>
+        <h3 class="text-lg font-semibold text-blue-900 mb-2">
+          Custom Products
+        </h3>
+        <p class="text-sm text-gray-600">
+          Precision concrete moulded products
+        </p>
       </div>
     </div>
   </section>
@@ -270,12 +286,17 @@
 
   <!-- Footer -->
   <footer class="bg-gradient-to-r from-blue-900 via-blue-800 to-slate-800 text-white">
-    <div class="max-w-7xl mx-auto px-6 py-8 text-sm flex flex-col md:flex-row justify-between gap-4">
-      <div>
-        © <span id="year"></span> Sharavathi Construction Products
+    <div class="max-w-7xl mx-auto px-6 py-8 text-sm">
+      <div class="flex flex-col md:flex-row justify-between gap-4">
+        <div>
+          © <span id="year"></span> Sharavathi Construction Products
+        </div>
+        <div>
+          Concrete Manufacturing • RCC Pipes • Interlocking Tiles • Karnataka
+        </div>
       </div>
-      <div>
-        Concrete Manufacturing • RCC Pipes • Interlocking Tiles • Karnataka
+      <div class="mt-4 text-center md:text-right text-blue-200">
+        GSTIN: 29AEHFS5163D1ZV
       </div>
     </div>
   </footer>
@@ -319,8 +340,15 @@
     const capGeometry1 = new THREE.ExtrudeGeometry(ringShape, { depth: 0.1, bevelEnabled: false });
     const capGeometry2 = new THREE.ExtrudeGeometry(ringShape, { depth: 0.1, bevelEnabled: false });
     
+    // Load concrete texture
+    const textureLoader = new THREE.TextureLoader();
+    const concreteTexture = textureLoader.load('concrete.jpeg');
+    concreteTexture.wrapS = THREE.RepeatWrapping;
+    concreteTexture.wrapT = THREE.RepeatWrapping;
+    concreteTexture.repeat.set(4, 4);
+    
     const concreteMaterial = new THREE.MeshStandardMaterial({
-      color: 0xa3a3a3,
+      map: concreteTexture,
       roughness: 0.85,
       metalness: 0.05,
       side: THREE.DoubleSide
@@ -368,57 +396,73 @@
     fillLight.position.set(-6, 1, -4);
     scene.add(fillLight);
 
-    // Water particles
+    // Beautiful water particles with simple, smooth motion
     const particleCount = 600;
-    const particleGeometry = new THREE.SphereGeometry(0.04, 8, 8);
-    const particleMaterial = new THREE.MeshStandardMaterial({
-      color: 0x4fc3f7,
-      transparent: true,
-      opacity: 0.7,
-      emissive: 0x1976d2,
-      emissiveIntensity: 0.3
-    });
+    const particleGeometry = new THREE.SphereGeometry(0.045, 16, 16);
+    
+    // Create beautiful gradient materials
+    const particleMaterials = [];
+    const colors = [0x64b5f6, 0x42a5f5, 0x2196f3, 0x1e88e5, 0x1976d2];
+    
+    for (let i = 0; i < colors.length; i++) {
+      particleMaterials.push(new THREE.MeshPhysicalMaterial({
+        color: colors[i],
+        transparent: true,
+        opacity: 0.75,
+        metalness: 0.2,
+        roughness: 0.1,
+        clearcoat: 1.0,
+        clearcoatRoughness: 0.1,
+        envMapIntensity: 1.5,
+        transmission: 0.3
+      }));
+    }
 
     const extendedLength = length * 6;
+    const particles = [];
     
     for (let i = 0; i < particleCount; i++) {
-      const particle = new THREE.Mesh(particleGeometry, particleMaterial);
+      const materialIndex = Math.floor(Math.random() * particleMaterials.length);
+      const particle = new THREE.Mesh(particleGeometry, particleMaterials[materialIndex]);
       
       particle.userData = {
         angle: Math.random() * Math.PI * 2,
-        radius: Math.random() * (innerRadius - 0.1),
-        speed: 0.02 + Math.random() * 0.03,
+        radius: Math.random() * (innerRadius - 0.15),
+        speed: 0.025 + Math.random() * 0.02,
         y: Math.random() * extendedLength - (extendedLength / 2),
-        phase: Math.random() * Math.PI * 2,
-        turbulence: 0.02 + Math.random() * 0.03
+        rotationSpeed: 0.005 + Math.random() * 0.01,
+        size: 0.85 + Math.random() * 0.3
       };
       
+      particle.scale.setScalar(particle.userData.size);
+      particle.castShadow = true;
+      particles.push(particle);
       pipeGroup.add(particle);
     }
 
-    // Animation
+    // Simple, smooth animation
     function animate() {
       requestAnimationFrame(animate);
 
-      pipeGroup.children.forEach((child) => {
-        if (child.userData.speed) {
-          const data = child.userData;
-          
-          data.y += data.speed;
-          data.angle += 0.02;
-          data.phase += 0.05;
-          
-          const turbulentRadius = data.radius + Math.sin(data.phase) * data.turbulence;
-          
-          if (data.y > extendedLength / 2) {
-            data.y = -extendedLength / 2;
-          }
-          
-          const x = Math.cos(data.angle) * turbulentRadius;
-          const z = Math.sin(data.angle) * turbulentRadius;
-          
-          child.position.set(x, data.y, z);
+      particles.forEach((particle) => {
+        const data = particle.userData;
+        
+        // Simple forward flow
+        data.y += data.speed;
+        
+        // Gentle rotation around center
+        data.angle += data.rotationSpeed;
+        
+        // Loop particles smoothly
+        if (data.y > extendedLength / 2) {
+          data.y = -extendedLength / 2;
         }
+        
+        // Calculate smooth circular position
+        const x = Math.cos(data.angle) * data.radius;
+        const z = Math.sin(data.angle) * data.radius;
+        
+        particle.position.set(x, data.y, z);
       });
 
       renderer.render(scene, camera);
