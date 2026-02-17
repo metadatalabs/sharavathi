@@ -12,12 +12,13 @@ window.addEventListener('DOMContentLoaded', function() {
     const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
 
     renderer.setSize(width, height);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+    renderer.powerPreference = 'low-power';
     camera.position.set(0, 0, 7);
 
     const outerRadius = 1.2, innerRadius = 0.95;
     const length = canvasId.includes('mobile') ? 3.5 : 5;
-    const radialSegments = 64;
+    const radialSegments = 32;
     const wallThickness = outerRadius - innerRadius;
     const cutStart = Math.PI * 0.18, cutArc = Math.PI * 1.64;
 
@@ -47,10 +48,15 @@ window.addEventListener('DOMContentLoaded', function() {
     const spigotGeo = new THREE.CylinderGeometry(spigotRadius, outerRadius, spigotLength, radialSegments, 1, true, cutStart, cutArc);
 
     const textureLoader = new THREE.TextureLoader();
-    const concreteTexture = textureLoader.load('concrete.jpeg');
+    const concreteTexture = textureLoader.load('concrete.jpeg', undefined, undefined, () => {
+      // Fallback if texture fails to load
+      concreteMaterial.map = null;
+      concreteMaterial.color.setHex(0xcccccc);
+      concreteMaterial.needsUpdate = true;
+    });
     concreteTexture.wrapS = THREE.RepeatWrapping;
     concreteTexture.wrapT = THREE.RepeatWrapping;
-    concreteTexture.repeat.set(4, 4);
+    concreteTexture.repeat.set(2, 2);
 
     const concreteMaterial = new THREE.MeshStandardMaterial({ map: concreteTexture, roughness: 0.85, metalness: 0.05, side: THREE.DoubleSide });
     const innerConcreteTexture = concreteTexture.clone();
@@ -95,18 +101,18 @@ window.addEventListener('DOMContentLoaded', function() {
 
     const rebarMaterial = new THREE.MeshStandardMaterial({ color: 0x8B5A2B, roughness: 0.55, metalness: 0.7 });
     const rebarRadius = (outerRadius + innerRadius) / 2, rebarTube = 0.025;
-    const rebarCount = Math.floor(length / 0.4);
+    const rebarCount = Math.floor(length / 0.5);
 
     for (let i = 0; i < rebarCount; i++) {
-      const ringGeo = new THREE.TorusGeometry(rebarRadius, rebarTube, 8, radialSegments);
+      const ringGeo = new THREE.TorusGeometry(rebarRadius, rebarTube, 4, radialSegments);
       const ring = new THREE.Mesh(ringGeo, rebarMaterial);
       ring.rotation.x = Math.PI / 2;
       ring.position.y = -length / 2 + (i + 0.5) * (length / rebarCount);
       pipeGroup.add(ring);
     }
 
-    const longiCount = 16;
-    const longiGeo = new THREE.CylinderGeometry(rebarTube, rebarTube, length, 6);
+    const longiCount = 8;
+    const longiGeo = new THREE.CylinderGeometry(rebarTube, rebarTube, length, 4);
     for (let i = 0; i < longiCount; i++) {
       const a = (i / longiCount) * Math.PI * 2;
       const bar = new THREE.Mesh(longiGeo, rebarMaterial);
@@ -125,9 +131,9 @@ window.addEventListener('DOMContentLoaded', function() {
     const fillLight = new THREE.DirectionalLight(0xffffff, 0.4);
     fillLight.position.set(-6, 1, -4); scene.add(fillLight);
 
-    const BALL_COUNT = 120, extendedLength = length * 6;
+    const BALL_COUNT = 30, extendedLength = length * 6;
     const waterMaterial = new THREE.MeshPhysicalMaterial({ color: 0x2196f3, transparent: true, opacity: 0.6, metalness: 0.05, roughness: 0.05, clearcoat: 1.0, clearcoatRoughness: 0.04, transmission: 0.5, thickness: 0.6, ior: 1.33, side: THREE.DoubleSide });
-    const sphereGeos = [new THREE.SphereGeometry(0.12,16,12), new THREE.SphereGeometry(0.09,12,10), new THREE.SphereGeometry(0.15,16,12)];
+    const sphereGeos = [new THREE.SphereGeometry(0.12,8,6), new THREE.SphereGeometry(0.09,8,6), new THREE.SphereGeometry(0.15,8,6)];
 
     const particles = [];
     for (let i = 0; i < BALL_COUNT; i++) {

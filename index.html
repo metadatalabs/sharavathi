@@ -19,6 +19,11 @@
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -37,14 +42,6 @@
       }
     }
   </script>
-
-  <!-- Three.js CDN -->
-  <script defer src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -249,11 +246,13 @@
     </div>
   </footer>
 
+  <!-- Three.js and animation -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="pipe.js"></script>
+
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
-
-  <script src="pipe.js"></script>
 
 </body>
 </html>
