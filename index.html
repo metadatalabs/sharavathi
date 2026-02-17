@@ -13,7 +13,7 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Sharavathi Construction Products" />
-  <meta property="og:description" content="World-class concrete manufacturing – RCC pipes, interlocking tiles, compound wall panels, and custom concrete products." />
+  <meta property="og:description" content="Manufacturer of RCC pipes, interlocking tiles, compound wall panels, and custom concrete products in Karnataka." />
   <meta property="og:type" content="website" />
 
   <!-- Favicon -->
@@ -21,6 +21,22 @@
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              gold: '#C9A84C',
+              dark: '#1C1C1C',
+              charcoal: '#2A2A2A',
+              ash: '#3A3A3A',
+            }
+          }
+        }
+      }
+    }
+  </script>
 
   <!-- Three.js CDN -->
   <script defer src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
@@ -28,276 +44,206 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     html {
       width: 100vw;
       overflow-x: hidden;
-      scrollbar-color: rgb(8, 100, 221) transparent;
+      scrollbar-color: #C9A84C transparent;
     }
-    html::-webkit-scrollbar {
-      width: 12px;
-    }
-    html::-webkit-scrollbar-track {
-      background: transparent;
-    }
+    html::-webkit-scrollbar { width: 8px; }
+    html::-webkit-scrollbar-track { background: #1C1C1C; }
+    html::-webkit-scrollbar-thumb { background: #C9A84C; }
 
     body {
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
       min-height: 100vh;
       width: 100vw;
       overflow-x: hidden;
+      color: #1C1C1C;
+      background: #ffffff;
     }
-    .whatsapp-btn {
-      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-    }
-    .whatsapp-btn:hover {
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-      transform: translateY(-2px);
-    }
-    .primary-blue {
-      background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
-    }
-    .section-blue {
-      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-    }
-    #pipe-canvas-mobile {
-      width: 100%;
-      height: 400px;
-    }
-    #pipe-canvas-desktop {
-      z-index: 0;
-    }
-    .hero-3d-container {
-      position: relative;
-      min-height: 500px;
-      border-radius: 1rem;
-      overflow: hidden;
-      background: transparent;
-    }
-    @media (min-width: 768px) {
-      .hero-3d-container {
-        min-height: 500px;
-      }
-    }
-    .header-content {
-      position: relative;
-      z-index: 10;
-    }
+
+    #pipe-canvas-mobile { width: 100%; height: 400px; }
+    #pipe-canvas-desktop { z-index: 0; }
+    .header-content { position: relative; z-index: 10; }
   </style>
 </head>
 
-<body class="bg-white text-gray-900 antialiased scroll-smooth">
+<body class="antialiased">
 
-  <!-- Header -->
-  <header class="bg-gradient-to-r from-blue-900 via-blue-800 to-slate-800 text-white shadow-lg">
-    <div class="max-w-7xl mx-auto px-6 py-4 header-content">
-      <div class="flex items-center justify-between">
-        <div class="flex items-center gap-4">
-          <img src="sharavathi-logo.png" alt="Sharavathi Construction Products Logo" class="h-16 w-auto">
+  <!-- HEADER -->
+  <header class="bg-brand-dark text-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between py-5">
+        <div class="flex items-center gap-5">
+          <img src="sharavathi-logo.png" alt="Sharavathi Construction Products Logo" class="h-14 w-auto">
           <div>
-            <div class="text-xl font-bold tracking-tight">
-              Sharavathi Construction Products
-            </div>
-            <div class="text-sm text-blue-100 mt-1">
-              Quality Concrete Manufacturing • Karnataka • Est. 2021
-            </div>
+            <div class="text-lg font-bold tracking-wide uppercase">Sharavathi Construction Products</div>
+            <div class="text-xs text-neutral-400 mt-1 tracking-widest uppercase">Concrete Manufacturing &bull; Karnataka</div>
           </div>
         </div>
-        <a href="https://wa.me/919353069590" target="_blank" class="whatsapp-btn px-6 py-3 rounded-full text-white font-semibold flex items-center gap-2 transition-all duration-300 hidden md:flex">
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-          </svg>
-          Contact Sales
-        </a>
+        <div class="hidden md:flex items-center gap-6">
+          <div class="text-right border-r border-neutral-600 pr-6">
+            <div class="text-2xl font-extrabold text-brand-gold leading-none">05</div>
+            <div class="text-[10px] text-neutral-500 uppercase tracking-widest mt-0.5">Years</div>
+          </div>
+          <a href="https://wa.me/919353069590" target="_blank"
+             class="bg-brand-gold hover:bg-yellow-600 text-brand-dark px-5 py-2.5 text-sm font-semibold uppercase tracking-wide flex items-center gap-2 transition-colors duration-200">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Contact Sales
+          </a>
+        </div>
       </div>
     </div>
+    <nav class="bg-brand-gold">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center">
+        <a href="#products" class="px-5 py-2.5 text-brand-dark text-xs font-bold uppercase tracking-widest hover:bg-brand-dark hover:text-brand-gold transition-colors duration-150">Products</a>
+        <a href="#leadership" class="px-5 py-2.5 text-brand-dark text-xs font-bold uppercase tracking-widest hover:bg-brand-dark hover:text-brand-gold transition-colors duration-150">Investors</a>
+        <a href="#contact" class="px-5 py-2.5 text-brand-dark text-xs font-bold uppercase tracking-widest hover:bg-brand-dark hover:text-brand-gold transition-colors duration-150">Contact</a>
+      </div>
+    </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="section-blue relative">
+  <!-- HERO -->
+  <section class="bg-neutral-100 relative">
     <canvas id="pipe-canvas-desktop" class="hidden md:mt-28 md:block absolute inset-0 w-full h-full"></canvas>
-    
     <div class="max-w-7xl mx-auto md:py-20 relative z-10">
       <div class="w-full md:hidden">
         <canvas id="pipe-canvas-mobile"></canvas>
       </div>
-      
-      <div class="flex flex-col md:flex-row items-center md:min-h-[500px]">
-        <div class="flex flex-col items-start w-full md:w-1/2 p-8 bg-white/80 rounded-2xl">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6 text-blue-900">
-              World-Class <br />
-              <span class="text-4xl">Concrete Manufacturing</span>
-            </h1>
-            <p class="text-lg text-gray-700 mb-8 max-w-xl">
-              High-quality RCC pipes, interlocking tiles, compound wall panels, and precision concrete products — engineered for durability.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4">
-              <a href="https://wa.me/919353069590" target="_blank" class="whatsapp-btn px-8 py-4 text-white font-semibold rounded-lg hover:bg-green-600 transition-all duration-300 flex items-center justify-center gap-2">
-                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                </svg>
-                WhatsApp Sales
-              </a>
-              <a href="https://share.google/HJa3st1DbUs1Acy6M" target="_blank" class="inline-block px-8 py-4 border-2 border-blue-900 text-blue-900 font-semibold rounded-lg hover:bg-blue-900 hover:text-white transition-all duration-300">
-                View Location
-              </a>
-            </div>
+      <div class="flex flex-col md:flex-row items-center md:min-h-[520px]">
+        <div class="w-full md:w-1/2 p-10 md:p-14 bg-white border-l-4 border-brand-gold">
+          <p class="text-xs uppercase tracking-[0.25em] text-neutral-400 mb-6 font-medium">Est. 2021 &mdash; Karnataka, India</p>
+          <h1 class="text-4xl md:text-5xl font-extrabold text-brand-dark leading-[1.15] mb-6">
+            Reinforced Concrete<br/>for Critical Infrastructure
+          </h1>
+          <p class="text-base text-neutral-500 mb-10 max-w-lg leading-relaxed">
+            IS-standard RCC pipes, interlocking pavers, precast boundary walls, and custom-moulded concrete components — manufactured for government and private infrastructure projects across Karnataka.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3">
+            <a href="https://wa.me/919353069590" target="_blank"
+               class="bg-brand-dark hover:bg-brand-charcoal text-white px-8 py-3.5 text-sm font-semibold uppercase tracking-wide flex items-center justify-center gap-2 transition-colors duration-200">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+              Enquire Now
+            </a>
+            <a href="https://share.google/HJa3st1DbUs1Acy6M" target="_blank"
+               class="border-2 border-brand-gold text-brand-dark px-8 py-3.5 text-sm font-semibold uppercase tracking-wide hover:bg-brand-gold transition-colors duration-200 text-center">
+              View Location
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Product Portfolio Section -->
-  <section class="max-w-7xl mx-auto px-6 py-20">
-    <h2 class="text-3xl font-bold mb-10 text-blue-900">
-      Product Portfolio
-    </h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- RCC Pipes -->
-      <div class="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-        <div class="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mb-4">
-          <span class="text-2xl text-blue-600 font-bold">🔵</span>
-        </div>
-        <h3 class="text-lg font-semibold text-blue-900 mb-2">
-          RCC Pipes
-        </h3>
-        <p class="text-sm text-gray-600">
-          NP3 / NP4 and custom specifications
-        </p>
-      </div>
+  <!-- PRODUCTS -->
+  <section id="products" class="bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+      <p class="text-xs uppercase tracking-[0.25em] text-brand-gold font-semibold mb-3">What We Manufacture</p>
+      <h2 class="text-3xl font-extrabold text-brand-dark mb-4">Product Range</h2>
+      <p class="text-neutral-500 max-w-2xl mb-14">Precast and reinforced concrete products for civil infrastructure, stormwater drainage, roads, and boundary construction.</p>
 
-      <!-- Interlocking Tiles -->
-      <div class="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-        <div class="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mb-4">
-          <span class="text-2xl text-blue-600 font-bold">🔷</span>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-neutral-200">
+        <div class="bg-white p-8 group hover:bg-brand-dark transition-colors duration-200">
+          <div class="w-10 h-10 border-2 border-brand-gold flex items-center justify-center mb-5 group-hover:bg-brand-gold transition-colors duration-200">
+            <svg class="w-5 h-5 text-brand-gold group-hover:text-brand-dark transition-colors duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg>
+          </div>
+          <h3 class="text-sm font-bold text-brand-dark uppercase tracking-wider mb-2 group-hover:text-white transition-colors duration-200">RCC Pipes</h3>
+          <p class="text-sm text-neutral-500 leading-relaxed group-hover:text-neutral-400 transition-colors duration-200">NP3 / NP4 grade reinforced concrete pipes per IS 458 for drainage &amp; sewerage</p>
         </div>
-        <h3 class="text-lg font-semibold text-blue-900 mb-2">
-          Interlocking Tiles
-        </h3>
-        <p class="text-sm text-gray-600">
-          Durable concrete tiles for various applications
-        </p>
-      </div>
-
-      <!-- Compound Wall Panels -->
-      <div class="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-        <div class="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mb-4">
-          <span class="text-2xl text-blue-600 font-bold">🔲</span>
+        <div class="bg-white p-8 group hover:bg-brand-dark transition-colors duration-200">
+          <div class="w-10 h-10 border-2 border-brand-gold flex items-center justify-center mb-5 group-hover:bg-brand-gold transition-colors duration-200">
+            <svg class="w-5 h-5 text-brand-gold group-hover:text-brand-dark transition-colors duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4zM14 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"/></svg>
+          </div>
+          <h3 class="text-sm font-bold text-brand-dark uppercase tracking-wider mb-2 group-hover:text-white transition-colors duration-200">Interlocking Pavers</h3>
+          <p class="text-sm text-neutral-500 leading-relaxed group-hover:text-neutral-400 transition-colors duration-200">High-density pavers for roads, parking areas, and pedestrian pathways</p>
         </div>
-        <h3 class="text-lg font-semibold text-blue-900 mb-2">
-          Compound Wall Panels
-        </h3>
-        <p class="text-sm text-gray-600">
-          Panels & posts for boundary walls
-        </p>
-      </div>
-
-      <!-- Custom Products -->
-      <div class="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-        <div class="flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg mb-4">
-          <span class="text-2xl text-blue-600 font-bold">⚙️</span>
+        <div class="bg-white p-8 group hover:bg-brand-dark transition-colors duration-200">
+          <div class="w-10 h-10 border-2 border-brand-gold flex items-center justify-center mb-5 group-hover:bg-brand-gold transition-colors duration-200">
+            <svg class="w-5 h-5 text-brand-gold group-hover:text-brand-dark transition-colors duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 6h18M3 12h18M3 18h18"/></svg>
+          </div>
+          <h3 class="text-sm font-bold text-brand-dark uppercase tracking-wider mb-2 group-hover:text-white transition-colors duration-200">Compound Walls</h3>
+          <p class="text-sm text-neutral-500 leading-relaxed group-hover:text-neutral-400 transition-colors duration-200">Precast panels &amp; posts for perimeter and boundary wall construction</p>
         </div>
-        <h3 class="text-lg font-semibold text-blue-900 mb-2">
-          Custom Products
-        </h3>
-        <p class="text-sm text-gray-600">
-          Precision concrete moulded products
-        </p>
+        <div class="bg-white p-8 group hover:bg-brand-dark transition-colors duration-200">
+          <div class="w-10 h-10 border-2 border-brand-gold flex items-center justify-center mb-5 group-hover:bg-brand-gold transition-colors duration-200">
+            <svg class="w-5 h-5 text-brand-gold group-hover:text-brand-dark transition-colors duration-200" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <h3 class="text-sm font-bold text-brand-dark uppercase tracking-wider mb-2 group-hover:text-white transition-colors duration-200">Custom Moulding</h3>
+          <p class="text-sm text-neutral-500 leading-relaxed group-hover:text-neutral-400 transition-colors duration-200">Precision-moulded concrete components built to project specifications</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Leadership -->
-  <section class="bg-gradient-to-br from-slate-50 to-blue-50">
-    <div class="max-w-7xl mx-auto px-6 py-20">
-      <h2 class="text-3xl font-bold mb-10 text-blue-900">
-        Leadership & Partners
-      </h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
-          <h3 class="text-xl font-semibold mb-4 text-blue-900">Business Partners</h3>
-          <ul class="text-gray-700 space-y-2">
-            <li>Mr. Mahabala Rao</li>
-            <li>Mr. Suresh Swamyrao</li>
-            <li>Mr. Rasal Raju</li>
+  <!-- LEADERSHIP -->
+  <section id="leadership" class="bg-brand-dark text-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+      <p class="text-xs uppercase tracking-[0.25em] text-brand-gold font-semibold mb-3">Leadership</p>
+      <h2 class="text-3xl font-extrabold mb-12">Management</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-700">
+        <div class="bg-brand-dark p-10">
+          <h3 class="text-xs font-bold uppercase tracking-widest text-brand-gold mb-6">Managing Partners</h3>
+          <ul class="space-y-3 text-neutral-300">
+            <li class="text-lg">Mr. Mahabala Rao</li>
+            <li class="text-lg">Ms. Anitha Rao</li>
+            <li class="text-lg">Mr. Suresh Swamyrao</li>
+            <li class="text-lg">Mr. Rasal Raju</li>
           </ul>
         </div>
-
-        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-600">
-          <h3 class="text-xl font-semibold mb-4 text-blue-900">Chief Executive Officer</h3>
-          <p class="text-gray-700">
-            Ms. Anitha Rao
-          </p>
+        <div class="bg-brand-dark p-10">
+          <h3 class="text-xs font-bold uppercase tracking-widest text-brand-gold mb-6">Our Founder</h3>
+          <p class="text-lg text-neutral-300">Mr. Mahabala Rao</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="max-w-7xl mx-auto px-6 py-20">
-    <h2 class="text-3xl font-bold mb-8 text-blue-900">
-      Contact & Location
-    </h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-      <div class="bg-gradient-to-br from-blue-50 to-slate-50 p-8 rounded-xl shadow-lg">
-        <h3 class="text-xl font-semibold mb-6 text-blue-900">Sales Enquiries</h3>
-        <div class="space-y-4">
-          <a href="tel:+919482021412" class="primary-blue px-6 py-4 rounded-lg text-white font-semibold flex items-center gap-3 transition-all duration-300 hover:shadow-lg">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
-            </svg>
-            <div class="text-left">
-              <div class="text-sm">Call Now</div>
-              <div class="text-lg font-bold">+91 93530 69590</div>
-            </div>
-          </a>
-          
-          <a href="tel:+919448628412" class="primary-blue px-6 py-4 rounded-lg text-white font-semibold flex items-center gap-3 transition-all duration-300 hover:shadow-lg">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
-            </svg>
-            <div class="text-left">
-              <div class="text-sm">Call Now</div>
-              <div class="text-lg font-bold">+91 94486 28412</div>
-            </div>
-          </a>
+  <!-- CONTACT -->
+  <section id="contact" class="bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-20">
+      <p class="text-xs uppercase tracking-[0.25em] text-brand-gold font-semibold mb-3">Reach Us</p>
+      <h2 class="text-3xl font-extrabold text-brand-dark mb-12">Contact</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-neutral-200">
+        <div class="bg-white p-10">
+          <h3 class="text-xs font-bold uppercase tracking-widest text-brand-gold mb-8">Sales Enquiries</h3>
+          <div class="space-y-4">
+            <a href="tel:+919353069590" class="flex items-center gap-4 bg-brand-dark hover:bg-brand-charcoal text-white p-5 transition-colors duration-200">
+              <svg class="w-5 h-5 text-brand-gold flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+              <div>
+                <div class="text-xs text-neutral-400 uppercase tracking-wider">Call</div>
+                <div class="text-lg font-bold">+91 93530 69590</div>
+              </div>
+            </a>
+            <a href="tel:+919448628412" class="flex items-center gap-4 bg-brand-dark hover:bg-brand-charcoal text-white p-5 transition-colors duration-200">
+              <svg class="w-5 h-5 text-brand-gold flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+              <div>
+                <div class="text-xs text-neutral-400 uppercase tracking-wider">Call</div>
+                <div class="text-lg font-bold">+91 94486 28412</div>
+              </div>
+            </a>
+          </div>
         </div>
-      </div>
-
-      <div class="bg-gradient-to-br from-slate-50 to-blue-50 p-8 rounded-xl shadow-lg">
-        <h3 class="text-xl font-semibold mb-6 text-blue-900">Factory Location</h3>
-        <iframe src="https://storage.googleapis.com/maps-solutions-vsgvlt491o/locator-plus/4pi0/locator-plus.html"
-          width="100%"
-          style="border:0; min-height: 400px;"
-          loading="lazy">
-        </iframe>
+        <div class="bg-white p-10">
+          <h3 class="text-xs font-bold uppercase tracking-widest text-brand-gold mb-8">Manufacturing Facility</h3>
+          <iframe src="https://storage.googleapis.com/maps-solutions-vsgvlt491o/locator-plus/4pi0/locator-plus.html" width="100%" style="border:0; min-height: 360px;" loading="lazy"></iframe>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-gradient-to-r from-blue-900 via-blue-800 to-slate-800 text-white">
-    <div class="max-w-7xl mx-auto px-6 py-8 text-sm">
-      <div class="flex flex-col md:flex-row justify-between gap-4">
-        <div>
-          © <span id="year"></span> Sharavathi Construction Products
-        </div>
-        <div>
-          Concrete Manufacturing • RCC Pipes • Interlocking Tiles • Karnataka • Est. 2021
-        </div>
+  <!-- FOOTER -->
+  <footer class="bg-brand-dark border-t-2 border-brand-gold">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 py-8">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-sm text-neutral-500">
+        <div>&copy; <span id="year"></span> Sharavathi Construction Products</div>
+        <div class="text-xs uppercase tracking-widest">RCC Pipes &bull; Pavers &bull; Precast Walls &bull; Karnataka</div>
       </div>
-      <div class="mt-4 text-center md:text-right text-blue-200">
+      <div class="mt-5 pt-5 border-t border-neutral-800 text-[11px] text-neutral-600 text-right uppercase tracking-widest">
         GSTIN: 29AEHFS5163D1ZV
       </div>
     </div>
@@ -307,320 +253,7 @@
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
-  <!-- Move Three.js-dependent code to run after Three.js is loaded -->
-  <script defer>
-    window.addEventListener('DOMContentLoaded', function() {
-      // Three.js RCC Pipe - Solid concrete pipe
-      function initPipeCanvas(canvasId) {
-        const canvas = document.getElementById(canvasId);
-        if (!canvas) return;
-        
-        const scene = new THREE.Scene();
-        const canvasContainer = canvas.parentElement;
-        const width = canvasContainer.offsetWidth;
-        const height = canvasId.includes('mobile') ? 400 : 500;
-      
-      const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
-      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-      
-      renderer.setSize(width, height);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-      camera.position.set(0, 0, 7);
-
-      // Pipe dimensions
-      const outerRadius = 1.2;
-      const innerRadius = 0.95;
-      const length = canvasId.includes('mobile') ? 3.5 : 5;
-      const radialSegments = 64;
-      const wallThickness = outerRadius - innerRadius;
-
-      // Cutaway arc — remove front-facing portion so interior is visible
-      const cutStart = Math.PI * 0.18;           // where the shell starts (from front)
-      const cutArc   = Math.PI * 1.64;           // arc length of the visible shell
-
-      // Outer shell (partial — cutaway)
-      const outerGeometry = new THREE.CylinderGeometry(
-        outerRadius, outerRadius, length, radialSegments, 1, true, cutStart, cutArc
-      );
-      // Inner shell (full 360° — always visible through the opening)
-      const innerGeometry = new THREE.CylinderGeometry(
-        innerRadius, innerRadius, length, radialSegments, 1, true
-      );
-
-      // Ring caps at both ends (full 360° annulus so you see the wall thickness)
-      const ringShape = new THREE.Shape();
-      ringShape.absarc(0, 0, outerRadius, 0, Math.PI * 2, false);
-      const holePath = new THREE.Path();
-      holePath.absarc(0, 0, innerRadius, 0, Math.PI * 2, true);
-      ringShape.holes.push(holePath);
-      const capGeometry = new THREE.ShapeGeometry(ringShape, radialSegments);
-
-      // Flat wall panels that seal the two cut edges along the length
-      const cutWallGeo = new THREE.PlaneGeometry(wallThickness, length);
-
-      // ── Spigot & socket bell (real RCC pipe joint profile) ──
-      const bellLength   = 0.22;
-      const bellRadius   = outerRadius + 0.10;   // flared lip
-      const bellInner    = innerRadius + 0.04;
-      const grooveDepth  = 0.04;
-
-      // Bell (socket end) — slightly flared outer ring
-      const bellOuterGeo = new THREE.CylinderGeometry(
-        bellRadius, outerRadius, bellLength, radialSegments, 1, true, cutStart, cutArc
-      );
-      const bellInnerGeo = new THREE.CylinderGeometry(
-        bellInner, innerRadius, bellLength, radialSegments, 1, true
-      );
-      // Bell end-cap ring
-      const bellRingShape = new THREE.Shape();
-      bellRingShape.absarc(0, 0, bellRadius, 0, Math.PI * 2, false);
-      const bellHole = new THREE.Path();
-      bellHole.absarc(0, 0, bellInner, 0, Math.PI * 2, true);
-      bellRingShape.holes.push(bellHole);
-      const bellCapGeo = new THREE.ShapeGeometry(bellRingShape, radialSegments);
-
-      // Rubber sealing groove inside the bell (subtle dark ring)
-      const grooveGeo = new THREE.TorusGeometry(
-        (bellInner + innerRadius) / 2, grooveDepth, 8, radialSegments, Math.PI * 2
-      );
-
-      // Spigot end — small chamfered step
-      const spigotLength = 0.10;
-      const spigotRadius = outerRadius - 0.03;
-      const spigotGeo = new THREE.CylinderGeometry(
-        spigotRadius, outerRadius, spigotLength, radialSegments, 1, true, cutStart, cutArc
-      );
-
-      // ── Concrete texture + materials ──
-      const textureLoader = new THREE.TextureLoader();
-      const concreteTexture = textureLoader.load('concrete.jpeg');
-      concreteTexture.wrapS = THREE.RepeatWrapping;
-      concreteTexture.wrapT = THREE.RepeatWrapping;
-      concreteTexture.repeat.set(4, 4);
-
-      const concreteMaterial = new THREE.MeshStandardMaterial({
-        map: concreteTexture,
-        roughness: 0.85,
-        metalness: 0.05,
-        side: THREE.DoubleSide
-      });
-
-      // Slightly darker interior concrete
-      const innerConcreteTexture = concreteTexture.clone();
-      innerConcreteTexture.needsUpdate = true;
-      const innerConcreteMaterial = new THREE.MeshStandardMaterial({
-        map: innerConcreteTexture,
-        roughness: 0.92,
-        metalness: 0.02,
-        color: 0xcccccc,
-        side: THREE.DoubleSide
-      });
-
-      // Dark rubber for sealing groove
-      const rubberMaterial = new THREE.MeshStandardMaterial({
-        color: 0x222222,
-        roughness: 1.0,
-        metalness: 0.0
-      });
-
-      // ── Assemble pipe group ──
-      const pipeGroup = new THREE.Group();
-
-      // Outer shell
-      const outerMesh = new THREE.Mesh(outerGeometry, concreteMaterial);
-      pipeGroup.add(outerMesh);
-
-      // Inner shell (full cylinder, visible through the cutaway)
-      const innerMesh = new THREE.Mesh(innerGeometry, innerConcreteMaterial);
-      pipeGroup.add(innerMesh);
-
-      // End-cap rings (both ends)
-      const cap1 = new THREE.Mesh(capGeometry, concreteMaterial);
-      cap1.rotation.x = -Math.PI / 2;
-      cap1.position.y = length / 2;
-      pipeGroup.add(cap1);
-
-      const cap2 = new THREE.Mesh(capGeometry.clone(), concreteMaterial);
-      cap2.rotation.x = Math.PI / 2;
-      cap2.position.y = -length / 2;
-      pipeGroup.add(cap2);
-
-      // Cut-edge walls (seal the two exposed vertical edges of the cutaway)
-      const edgeAngle1 = cutStart;
-      const edgeAngle2 = cutStart + cutArc;
-      for (const angle of [edgeAngle1, edgeAngle2]) {
-        const midR = (outerRadius + innerRadius) / 2;
-        const wall = new THREE.Mesh(cutWallGeo, concreteMaterial);
-        wall.position.set(
-          Math.cos(angle) * midR,
-          0,
-          Math.sin(angle) * midR
-        );
-        wall.rotation.y = -angle + Math.PI / 2;
-        pipeGroup.add(wall);
-      }
-
-      // ── Bell (socket) end — positive Y ──
-      const bellGroup = new THREE.Group();
-      bellGroup.position.y = length / 2 + bellLength / 2;
-
-      bellGroup.add(new THREE.Mesh(bellOuterGeo, concreteMaterial));
-      bellGroup.add(new THREE.Mesh(bellInnerGeo, innerConcreteMaterial));
-
-      const bellCap = new THREE.Mesh(bellCapGeo, concreteMaterial);
-      bellCap.rotation.x = -Math.PI / 2;
-      bellCap.position.y = bellLength / 2;
-      bellGroup.add(bellCap);
-
-      // Rubber groove inside bell
-      const groove = new THREE.Mesh(grooveGeo, rubberMaterial);
-      groove.rotation.x = Math.PI / 2;
-      groove.position.y = bellLength * 0.3;
-      bellGroup.add(groove);
-
-      pipeGroup.add(bellGroup);
-
-      // ── Spigot end — negative Y ──
-      const spigotMesh = new THREE.Mesh(spigotGeo, concreteMaterial);
-      spigotMesh.position.y = -length / 2 - spigotLength / 2;
-      pipeGroup.add(spigotMesh);
-
-      // ── Steel reinforcement rings (rebar) ──
-      const rebarMaterial = new THREE.MeshStandardMaterial({
-        color: 0x8B5A2B,
-        roughness: 0.55,
-        metalness: 0.7
-      });
-
-      const rebarRadius = (outerRadius + innerRadius) / 2;  // centered in wall
-      const rebarTube   = 0.025;                              // bar thickness
-      const rebarCount  = Math.floor(length / 0.4);           // ring every ~0.4 units
-
-      // Circumferential rings (stirrups)
-      for (let i = 0; i < rebarCount; i++) {
-        const ringGeo = new THREE.TorusGeometry(rebarRadius, rebarTube, 8, radialSegments);
-        const ring = new THREE.Mesh(ringGeo, rebarMaterial);
-        ring.rotation.x = Math.PI / 2;
-        ring.position.y = -length / 2 + (i + 0.5) * (length / rebarCount);
-        pipeGroup.add(ring);
-      }
-
-      // Longitudinal bars (run full length, spaced around circumference)
-      const longiCount = 16;
-      const longiGeo = new THREE.CylinderGeometry(rebarTube, rebarTube, length, 6);
-      for (let i = 0; i < longiCount; i++) {
-        const angle = (i / longiCount) * Math.PI * 2;
-        const bar = new THREE.Mesh(longiGeo, rebarMaterial);
-        bar.position.set(
-          Math.cos(angle) * rebarRadius,
-          0,
-          Math.sin(angle) * rebarRadius
-        );
-        pipeGroup.add(bar);
-      }
-
-      pipeGroup.rotation.z = Math.PI / 2;
-      
-      // Move pipe to the right on desktop
-      if (canvasId.includes('desktop')) {
-        pipeGroup.position.x = 4;
-      }
-      
-      scene.add(pipeGroup);
-
-      // Lighting
-      scene.add(new THREE.AmbientLight(0xffffff, 0.6));
-      scene.add(new THREE.HemisphereLight(0xffffff, 0x8db4ff, 0.35));
-      
-      const keyLight = new THREE.DirectionalLight(0xffffff, 1.15);
-      keyLight.position.set(6, 6, 5);
-      scene.add(keyLight);
-
-      const fillLight = new THREE.DirectionalLight(0xffffff, 0.4);
-      fillLight.position.set(-6, 1, -4);
-      scene.add(fillLight);
-
-      // ── Simple metaball water ──────────────────────────────────────
-      const BALL_COUNT = 120;
-      const extendedLength = length * 6;
-
-      // Glassy water material
-      const waterMaterial = new THREE.MeshPhysicalMaterial({
-        color: 0x2196f3,
-        transparent: true,
-        opacity: 0.6,
-        metalness: 0.05,
-        roughness: 0.05,
-        clearcoat: 1.0,
-        clearcoatRoughness: 0.04,
-        transmission: 0.5,
-        thickness: 0.6,
-        ior: 1.33,
-        side: THREE.DoubleSide
-      });
-
-      // Shared sphere geometries (3 sizes for organic variety)
-      const sphereGeos = [
-        new THREE.SphereGeometry(0.12, 16, 12),
-        new THREE.SphereGeometry(0.09, 12, 10),
-        new THREE.SphereGeometry(0.15, 16, 12)
-      ];
-
-      const particles = [];
-      for (let i = 0; i < BALL_COUNT; i++) {
-        const geo = sphereGeos[i % sphereGeos.length];
-        const ball = new THREE.Mesh(geo, waterMaterial);
-
-        ball.userData = {
-          angle: Math.random() * Math.PI * 2,
-          radius: Math.random() * (innerRadius - 0.2) * 0.8,
-          y: Math.random() * extendedLength - extendedLength / 2,
-          speed: 0.03 + Math.random() * 0.025,
-          rotSpeed: 0.004 + Math.random() * 0.01,
-          scale: 0.8 + Math.random() * 0.5
-        };
-        ball.scale.setScalar(ball.userData.scale);
-        particles.push(ball);
-        pipeGroup.add(ball);
-      }
-
-      function animate() {
-        requestAnimationFrame(animate);
-
-        for (let i = 0; i < particles.length; i++) {
-          const p = particles[i];
-          const d = p.userData;
-
-          d.y += d.speed;
-          d.angle += d.rotSpeed;
-          if (d.y > extendedLength / 2) d.y = -extendedLength / 2;
-
-          p.position.set(
-            Math.cos(d.angle) * d.radius,
-            d.y,
-            Math.sin(d.angle) * d.radius
-          );
-        }
-
-        renderer.render(scene, camera);
-      }
-
-      animate();
-
-      window.addEventListener('resize', () => {
-        const w = canvasContainer.offsetWidth;
-        const h = canvasId.includes('mobile') ? 400 : 500;
-        camera.aspect = w / h;
-        camera.updateProjectionMatrix();
-        renderer.setSize(w, h);
-      });
-      }
-
-      // Initialize both canvases
-      initPipeCanvas('pipe-canvas-mobile');
-      initPipeCanvas('pipe-canvas-desktop');
-    });
-  </script>
+  <script src="pipe.js"></script>
 
 </body>
 </html>
