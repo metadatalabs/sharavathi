@@ -1,0 +1,38 @@
+export const locations = [
+    {
+        slug: 'rcc-pipes-shivamogga', name: 'Shivamogga',
+        intro: 'NP3 and NP4 RCC pipes supplied to projects in Shivamogga (Shimoga) from our factory in Hosanagar. Send your pipe schedule and delivery location for a quotation.',
+        heading: 'Delivery to Shivamogga city and district',
+        delivery: 'Please specify whether your site is in Shivamogga city or elsewhere in the district. Include the town or village, PIN code and a site map pin so we can quote transport to the correct destination.',
+        planning: 'For orders split across multiple sites, list the pipe sizes and quantities for each destination. This lets us confirm dispatch arrangements and transport costs separately.',
+        question: 'Can you quote for several delivery locations in Shivamogga?',
+        answer: 'Yes. Send a destination-wise list of sizes, classes and quantities, with the required delivery dates. Our team will confirm supply and transport arrangements for each site.',
+    },
+    {
+        slug: 'rcc-pipes-sagara', name: 'Sagara',
+        intro: 'RCC pipes for drainage and civil works in Sagara, supplied from Sharavathi Construction Products in Hosanagar. Enquire about NP3 and NP4 pipes against your project specification.',
+        heading: 'Arranging pipe supply to Sagara',
+        delivery: 'Share your Sagara delivery address and map pin, along with the diameter, class and number of pipes. Include the approach-road and unloading details so transport can be planned for your site.',
+        planning: 'For work carried out in stages, send the quantities needed in each phase rather than only the total order. We can then discuss production and dispatch dates against your construction schedule.',
+        question: 'Can an order for Sagara be delivered in stages?',
+        answer: 'Ask for phased delivery when requesting a quotation. Include the sizes, quantities and dates for each stage; availability, transport costs and the schedule are confirmed before ordering.',
+    },
+    {
+        slug: 'rcc-pipes-hosanagar', name: 'Hosanagar',
+        intro: 'RCC pipes manufactured locally at Sharavathi Construction Products in Jayanagar, Melinabesige, Hosanagar. Contact the factory for NP3 and NP4 pipe specifications, pricing and supply.',
+        heading: 'Contact or visit the Hosanagar factory',
+        delivery: 'Our factory is at Jayanagar, Melinabesige, Hosanagar, Karnataka 577418. Call ahead to arrange a visit, review your requirements or discuss collection and delivery options.',
+        planning: 'Before arranging a vehicle for collection, confirm the order, pipe dimensions, readiness and loading arrangements with our team. Local delivery can also be discussed when quoting.',
+        question: 'Can I collect RCC pipes from the Hosanagar factory?',
+        answer: 'Contact the team to agree on collection timing and loading arrangements before sending a vehicle. Product availability and order readiness must be confirmed first.',
+    },
+    {
+        slug: 'rcc-pipes-thirthahalli', name: 'Thirthahalli',
+        intro: 'NP3 and NP4 RCC pipe supply for projects in Thirthahalli from our Hosanagar factory. Share the pipe dimensions, quantity and site location to confirm pricing and transport.',
+        heading: 'Planning delivery to your Thirthahalli site',
+        delivery: 'Include a map pin for the unloading point as well as the postal address. Let us know about restricted vehicle access, turning space or any limits on delivery hours when requesting transport pricing.',
+        planning: 'Confirm who will arrange unloading equipment and where pipes will be stored on arrival. Share these requirements with the enquiry so delivery responsibilities can be agreed before dispatch.',
+        question: 'What site details are needed for delivery to Thirthahalli?',
+        answer: 'Send the address, map pin, vehicle-access details and required date. Include unloading arrangements and any site restrictions so the team can confirm suitable transport and scheduling.',
+    },
+] as const
