@@ -1,6 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@theme {
+  --color-brand-gold: #7d9eb8;
+}
 
 :root { --ink:#253440; --text:#303a43; --muted:#606b75; --paper:#f6f7f8; --line:#d9dfe4; --accent:#337fb2; }
 * { box-sizing:border-box; }

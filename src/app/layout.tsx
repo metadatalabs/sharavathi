@@ -22,7 +22,7 @@ export default function RootLayout({
     children: React.ReactNode
 }) {
     return (
-        <html lang="en">
+        <html lang="en" data-scroll-behavior="smooth">
             <body className={`${inter.className} antialiased`}>
                 <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
                     '@context': 'https://schema.org', '@type': ['Organization', 'LocalBusiness'],

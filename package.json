@@ -11,24 +11,21 @@
     "check:export": "node scripts/check-export.mjs"
   },
   "dependencies": {
-    "next": "^15.5.26",
+    "next": "^16.3.6",
     "react": "^19.3.0",
     "react-dom": "^19.3.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.7",
-    "@types/node": "^22.0.0",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "eslint": "^9.39.5",
-    "eslint-config-next": "^15.5.26",
+    "@eslint/compat": "^2.1.1",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^26.6.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "eslint": "^10.11.0",
+    "eslint-config-next": "^16.3.6",
     "postcss": "^8.5.28",
-    "tailwindcss": "^3.4.0",
-    "typescript": "^5.0.0"
-  },
-  "overrides": {
-    "next": {
-      "postcss": "$postcss"
-    }
+    "tailwindcss": "^4.3.3",
+    "typescript": "npm:@typescript/typescript6@^6.0.2"
   }
 }

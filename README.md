@@ -4,7 +4,7 @@ Next.js site exported as static files for GitHub Pages at `sharavathi.co`.
 
 ## Development and checks
 
-Use Node.js 22.
+Use current stable Node.js and npm. CI installs the latest versions. Dependency ranges allow compatible updates; the committed lockfile keeps clean installs reproducible.
 
 ```sh
 npm ci
@@ -35,10 +35,7 @@ The existing `.github/workflows/deploy.yml` installs from the lockfile, lints, b
 
 - Business details and metadata: `src/lib/site.ts`
 - Supply-area content: `src/lib/locations.ts`
-- Visual and copy preferences: `docs/content-guidelines.md`
-- Photo provenance: `docs/photo-edits.md`
-- Release review: `docs/pre-production-review.md`
 
 The quote form prepares a WhatsApp message for customer review. It does not submit to a backend. Catalogue dimensions and delivery availability remain subject to sales confirmation.
 
-Next.js 15 is retained. Its PostCSS dependency is overridden to the patched version used by the project; remove the override when a future compatible framework release includes that fix.
+The site uses Next.js 16 and Tailwind CSS 4 without dependency overrides. TypeScript 7 runs the standalone typecheck; Microsoft's TypeScript 6 compatibility package supplies the API still needed by Next.js and ESLint. ESLint 10 uses the official compatibility adapter for Next's bundled legacy plugins.
